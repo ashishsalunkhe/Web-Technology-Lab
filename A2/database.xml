@@ -1,0 +1,10 @@
+<database>
+	<account>
+		<user>abcde</user>
+		<pass>abcde</pass>
+	</account>
+	<account>
+		<user>rstuv</user>
+		<pass>rstuv</pass>
+	</account>
+</database>

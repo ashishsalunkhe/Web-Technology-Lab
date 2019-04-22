@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<p>Syntax Validator</p>
+	<form name="list" onsubmit="validate()" method="post"> <br>
+		<input type="text" name="user" placeholder="Username"> <br>
+		<input type="text" name="email" placeholder="Email"> <br>
+		<input type="text" name="mobile" placeholder="Mobile Number"> <br>
+		<input type="submit" value="Validate">
+	</form>
+	<script>
+		function validate() {
+			u = document.list.user.value;
+			flag = 0;
+			if (u.length < 4)
+			{
+				flag = 1;
+				alert("Username length must be greater than 4");
+			}
+
+			e = document.list.email.value;
+			a = e.indexOf("@");
+			d = e.indexOf(".");
+			if (a < 1 || d < a+2 || d >= e.length)
+			{
+				flag = 1;
+				alert("Email Syntax Invalid");
+			}
+
+			m = document.list.mobile.value;
+			if (isNaN(m))
+			{
+				flag = 1;
+				alert("Only Numeric Characters allowed for Mobile Number");
+			}
+			if (flag == 0)
+				alert("Syntax Correct");
+		}
+	</script>
+</body>
+</html>

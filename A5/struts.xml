@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC    
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"    
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>	
+		<package name="Login" namespace="/" extends="struts-default">	
+			<action name="Login" class="varun.validate">
+				<result name="login">/Home.jsp</result>
+				<result name="error">/Login.jsp</result>				
+			</action>		
+		</package>
+		<package name="Register" namespace="/" extends="struts-default">		
+			<action name="Register" class="varun.register">
+				<result name="success">/Login.jsp</result>
+				<result name="failure">/Error.jsp</result>				
+			</action>		
+		</package>	
+</struts>

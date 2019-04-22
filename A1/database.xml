@@ -1,0 +1,14 @@
+<database>
+	<goods>
+		<item>Pencil</item>
+		<price>10</price>
+	</goods>
+	<goods>
+		<item>Pen</item>
+		<price>20</price>
+	</goods>
+	<goods>
+		<item>Notebook</item>
+		<price>30</price>
+	</goods>
+</database>

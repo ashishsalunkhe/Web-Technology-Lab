@@ -1,0 +1,22 @@
+button {
+	position: fixed;
+	left: 45%;
+	background: cyan;
+	border-radius: 50px;
+	font-size: 20px;
+}
+table {
+	position: fixed;
+	top: 10%;
+	left: 42%;
+	border-collapse: collapse;	
+}
+table td, table th {
+	font-size: 20px;
+	padding: 20px;
+	border: 1px solid black;
+}
+table th {
+	background: cyan;
+}
+

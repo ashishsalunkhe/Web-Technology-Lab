@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>ValidateJS</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="form">
+		<input id="user" type="text"	 placeholder="Username" required> <br>
+		<input id="pass" type="password" placeholder="Password" required> <br>
+		<button onclick="login()">Login</button>
+	</div>
+	<script>
+		function login() {
+			xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					xml = this.responseXML;
+					flag = 0;
+					user = document.getElementById("user").value;
+					pass = document.getElementById("pass").value;
+					x = xml.getElementsByTagName("account");
+					for(i=0; i < x.length; i++) {
+						u = x[i].getElementsByTagName("user")[0].childNodes[0].nodeValue;
+						p = x[i].getElementsByTagName("pass")[0].childNodes[0].nodeValue
+						if (user == u && pass == p)
+						{
+							flag = 1;
+							break;
+						}
+					}
+					if (flag == 1)
+						open("home.html","_self");
+					else
+						alert("Wrong Username/Password");
+				}
+			};
+			xhttp.open("GET","database.xml",true);
+			xhttp.send();
+		}
+	</script>
+</body>
+</html>

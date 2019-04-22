@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>HTML,CSS,XML</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<button type="button" onclick="display_table()">Display Table</button>
+	<table id="list"></table>
+	<script>
+		function display_table() {
+			xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					xml = this.responseXML;
+					table = "<tr> <th>Item</th> <th>Price</th> </tr>";
+					x = xml.getElementsByTagName("goods");
+					for(i=0; i < x.length; i++) {
+						table += "<tr> <td>"+x[i].getElementsByTagName("item")[0].childNodes[0].nodeValue+"</td> <td>"+x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue+"</td> <tr>";
+					}
+					document.getElementById("list").innerHTML = table;
+				}
+			};
+			xhttp.open("GET","database.xml",true);
+			xhttp.send();
+		}
+	</script>
+</body>
+</html>
